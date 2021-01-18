@@ -1,11 +1,12 @@
 import React from 'react';
+import Table from '../UI/Table';
 
-const invoice = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const Invoice = () => {
+	return (
+		<div>
+			<Table />
+		</div>
+	);
 };
 
-export default invoice;
+export default Invoice;
