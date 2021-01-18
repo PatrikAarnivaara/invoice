@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -29,12 +28,10 @@ export default function AcccessibleTable() {
 	const classes = useStyles();
 
 	return (
+        
 		<TableContainer component={Paper}>
 			<Table className={classes.table} aria-label="caption table">
 				<TableHead>
-					<TableRow>
-						<TableCell>Invoices</TableCell>
-					</TableRow>
 					<TableRow>
 						<TableCell>Dessert (100g serving)</TableCell>
 						<TableCell align="right">Calories</TableCell>

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../UI/Header';
 import Table from '../UI/Table';
+import TableToolbar from '../UI/TableToolbar';
 import Grid from '@material-ui/core/Grid';
 /* TODO: Look up CSSBASELINE! */
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,11 +9,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		height: '100vh',
+        height: '100vh',
 	},
 	image: {
 		backgroundImage:
-			'url(https://res.cloudinary.com/whatwherewhen/image/upload/v1610977367/xn9y3a5t7wxwcty2vfoe.png)',
+			'url(https://res.cloudinary.com/whatwherewhen/image/upload/v1610996874/samples/landscapes/z2ovbbi04028jmn0aj7l.jpg)',
 		backgroundRepeat: 'no-repeat',
 		backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
 		backgroundSize: 'cover',
@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
+		marginRight: '1em',
 	},
 }));
 
@@ -33,7 +34,7 @@ const Invoice = () => {
 		<Grid container component="main" className={classes.root}>
 			<CssBaseline />
 			<Grid item xs={8} component={Paper} elevation={6} square>
-				<Header />
+            <TableToolbar />
 				<Table />
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
