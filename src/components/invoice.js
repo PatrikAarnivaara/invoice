@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../UI/Header';
 import Table from '../UI/Table';
 import Grid from '@material-ui/core/Grid';
 /* TODO: Look up CSSBASELINE! */
@@ -32,6 +33,7 @@ const Invoice = () => {
 		<Grid container component="main" className={classes.root}>
 			<CssBaseline />
 			<Grid item xs={8} component={Paper} elevation={6} square>
+				<Header />
 				<Table />
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
