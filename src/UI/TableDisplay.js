@@ -7,10 +7,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import NumberFormat from 'react-number-format';
 
 const useStyles = makeStyles({
 	table: {
 		minWidth: '50vw',
+		cursor: 'pointer',
 	},
 });
 
@@ -37,10 +39,17 @@ const TableDisplay = ({ invoices }) => {
 							<TableCell component="th" scope="row">
 								{invoice.type}
 							</TableCell>
-							<TableCell align="left">{invoice.accountName}</TableCell>
+							<TableCell align="left">{invoice.accountName.replace(/\d(?!\d{4})/g, "*").toUpperCase()}</TableCell>
 							<TableCell align="left">{invoice.status}</TableCell>
 							<TableCell align="left">{invoice.currency}</TableCell>
-							<TableCell align="left">{invoice.balance}</TableCell>
+							<TableCell align="left">
+								<NumberFormat
+									value={invoice.balance}
+									displayType={'text'}
+									thousandSeparator={true}
+									prefix={'$'}
+								/>
+							</TableCell>
 						</TableRow>
 					))}
 				</TableBody>
