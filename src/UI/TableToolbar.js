@@ -8,8 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 const useToolbarStyles = makeStyles((theme) => ({
 	root: {
-		paddingLeft: theme.spacing(2),
-		paddingRight: theme.spacing(1),
+		padding: theme.spacing(2),
 	},
 	title: {
 		flex: '1 1 100%',
@@ -21,7 +20,7 @@ const TableToolbar = () => {
 
 	return (
 		<Toolbar className={classes.root}>
-			<Typography className={classes.title} variant="h6" component="div">
+			<Typography className={classes.title} variant="h6" color="primary">
 				All invoices - {new Date().getFullYear()}
 			</Typography>
 			<Tooltip title="Filter list">

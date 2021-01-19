@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
 	table: {
-		minWidth: 650,
+		minWidth: "50vw",
 	},
 });
 
@@ -33,11 +33,11 @@ export default function AcccessibleTable() {
 			<Table className={classes.table} aria-label="caption table">
 				<TableHead>
 					<TableRow>
-						<TableCell>Dessert (100g serving)</TableCell>
-						<TableCell align="right">Calories</TableCell>
-						<TableCell align="right">Fat&nbsp;(g)</TableCell>
-						<TableCell align="right">Carbs&nbsp;(g)</TableCell>
-						<TableCell align="right">Protein&nbsp;(g)</TableCell>
+						<TableCell>Type</TableCell>
+						<TableCell align="right">Account Name</TableCell>
+						<TableCell align="right">Status</TableCell>
+						<TableCell align="right">Currency</TableCell>
+						<TableCell align="right">Balance</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import mockApi from '../api/mockApi';
 import Table from '../UI/Table';
 import TableToolbar from '../UI/TableToolbar';
 import Grid from '@material-ui/core/Grid';
-/* TODO: Look up CSSBASELINE! */
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-        height: '100vh',
+		height: '100vh',
 	},
 	image: {
 		backgroundImage:
@@ -24,18 +24,31 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		marginRight: '1em',
 	},
 }));
 
 const Invoice = () => {
 	const classes = useStyles();
+	const [invoices, setInvoices] = useState([]);
+
+	useEffect(() => {
+		const getInvoices = async () => {
+			try {
+				const response = await mockApi.get('/invoices');
+				setInvoices(response.data);
+			} catch {
+				console.log('GET invoices did not succeed.');
+			}
+		};
+		getInvoices();
+	}, []);
+
 	return (
 		<Grid container component="main" className={classes.root}>
 			<CssBaseline />
-			<Grid item xs={8} component={Paper} elevation={6} square>
-            <TableToolbar />
-				<Table />
+			<Grid item xs={8} component={Paper} elevation={6}>
+				<TableToolbar />
+				<Table invoices={invoices} />
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
 				<h1>Detail here</h1>

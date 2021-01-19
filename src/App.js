@@ -1,13 +1,11 @@
-import './App.css';
 import Invoice from './components/Invoice';
 
-function App() {
+const App = () => {
 	return (
-		<div className="App">
-	
+		<div>
 			<Invoice />
 		</div>
 	);
-}
+};
 
 export default App;
