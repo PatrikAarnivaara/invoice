@@ -10,50 +10,43 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
 	table: {
-		minWidth: "50vw",
+		minWidth: '50vw',
 	},
 });
 
-function createData(name, calories, fat, carbs, protein) {
-	return { name, calories, fat, carbs, protein };
-}
+const TableDisplay = ({ invoices }) => {
+	console.log(invoices);
 
-const rows = [
-	createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-	createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-	createData('Eclair', 262, 16.0, 24, 6.0),
-];
-
-export default function AcccessibleTable() {
 	const classes = useStyles();
 
 	return (
-        
 		<TableContainer component={Paper}>
 			<Table className={classes.table} aria-label="caption table">
 				<TableHead>
 					<TableRow>
 						<TableCell>Type</TableCell>
-						<TableCell align="right">Account Name</TableCell>
-						<TableCell align="right">Status</TableCell>
-						<TableCell align="right">Currency</TableCell>
-						<TableCell align="right">Balance</TableCell>
+						<TableCell align="left">Account Name</TableCell>
+						<TableCell align="left">Status</TableCell>
+						<TableCell align="left">Currency</TableCell>
+						<TableCell align="left">Balance</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{rows.map((row) => (
-						<TableRow key={row.name}>
+					{invoices.map((invoice) => (
+						<TableRow key={invoice.id}>
 							<TableCell component="th" scope="row">
-								{row.name}
+								{invoice.type}
 							</TableCell>
-							<TableCell align="right">{row.calories}</TableCell>
-							<TableCell align="right">{row.fat}</TableCell>
-							<TableCell align="right">{row.carbs}</TableCell>
-							<TableCell align="right">{row.protein}</TableCell>
+							<TableCell align="left">{invoice.accountName}</TableCell>
+							<TableCell align="left">{invoice.status}</TableCell>
+							<TableCell align="left">{invoice.currency}</TableCell>
+							<TableCell align="left">{invoice.balance}</TableCell>
 						</TableRow>
 					))}
 				</TableBody>
 			</Table>
 		</TableContainer>
 	);
-}
+};
+
+export default TableDisplay;

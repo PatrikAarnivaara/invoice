@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import mockApi from '../api/mockApi';
-import Table from '../UI/Table';
+import Table from '../UI/TableDisplay';
 import TableToolbar from '../UI/TableToolbar';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -35,7 +35,7 @@ const Invoice = () => {
 		const getInvoices = async () => {
 			try {
 				const response = await mockApi.get('/invoices');
-				setInvoices(response.data);
+                setInvoices(response.data);
 			} catch {
 				console.log('GET invoices did not succeed.');
 			}
@@ -48,7 +48,7 @@ const Invoice = () => {
 			<CssBaseline />
 			<Grid item xs={8} component={Paper} elevation={6}>
 				<TableToolbar />
-				<Table invoices={invoices} />
+				{invoices && <Table invoices={invoices} />}
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
 				<h1>Detail here</h1>
