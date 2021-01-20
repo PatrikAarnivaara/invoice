@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import mockApi from '../api/mockApi';
-import Table from '../UI/TableDisplay';
+import InvoiceTable from './InvoiceTable';
+import InvoiceDetail from './InvoiceDetail';
 import TableToolbar from '../UI/TableToolbar';
-import Grid from '@material-ui/core/Grid';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import { CssBaseline, Grid, Paper } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -30,12 +30,20 @@ const useStyles = makeStyles((theme) => ({
 const Invoice = () => {
 	const classes = useStyles();
 	const [invoices, setInvoices] = useState([]);
+	const [invoiceDetail, setInvoiceDetail] = useState({
+		id: '',
+		type: '',
+		accountName: '',
+		status: '',
+		currency: '',
+		balance: '',
+	});
 
 	useEffect(() => {
 		const getInvoices = async () => {
 			try {
 				const response = await mockApi.get('/invoices');
-                setInvoices(response.data);
+				setInvoices(response.data);
 			} catch {
 				console.log('GET invoices did not succeed.');
 			}
@@ -43,15 +51,27 @@ const Invoice = () => {
 		getInvoices();
 	}, []);
 
+	const displayInvoiceDetail = (id, type, accountName, status, currency, balance) => {
+		setInvoiceDetail({
+			...invoiceDetail,
+			id: id,
+			type: type,
+			accountName: accountName,
+			status: status,
+			currency: currency,
+			balance: balance,
+		});
+	};
+
 	return (
 		<Grid container component="main" className={classes.root}>
 			<CssBaseline />
 			<Grid item xs={8} component={Paper} elevation={6}>
 				<TableToolbar />
-				{invoices && <Table invoices={invoices} />}
+				{invoices && <InvoiceTable invoices={invoices} displayInvoiceDetail={displayInvoiceDetail} />}
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
-				<h1>Detail here</h1>
+				<InvoiceDetail invoiceDetail={invoiceDetail} />
 			</Grid>
 		</Grid>
 	);

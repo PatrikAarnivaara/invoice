@@ -20,7 +20,7 @@ const TableToolbar = () => {
 
 	return (
 		<Toolbar className={classes.root}>
-			<Typography className={classes.title} variant="h6" color="primary">
+			<Typography className={classes.title} variant="h5" color="secondary">
 				All invoices - {new Date().getFullYear()}
 			</Typography>
 			<Tooltip title="Filter list">
