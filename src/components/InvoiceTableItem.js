@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NumberFormat from 'react-number-format';
 import { makeStyles } from '@material-ui/core/styles';
 import { TableCell, TableRow } from '@material-ui/core';
@@ -11,11 +11,16 @@ const useStyles = makeStyles((theme) => ({
 
 const InvoiceTableItem = ({ index, id, type, accountName, status, currency, balance, displayInvoiceDetail }) => {
 	const classes = useStyles();
+	const [isItemSelected, setIsItemSelected] = useState(false);
+
 	const handleOnClickItem = () => {
+        console.log(id)
+		setIsItemSelected(isItemSelected => !isItemSelected);
 		displayInvoiceDetail(id, type, accountName, status, currency, balance);
 	};
+
 	return (
-		<TableRow key={index} onClick={handleOnClickItem} className={classes.root}>
+		<TableRow key={index} className={classes.root} selected={isItemSelected} hover onClick={handleOnClickItem}>
 			<TableCell component="th" scope="row">
 				{type}
 			</TableCell>

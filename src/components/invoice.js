@@ -11,6 +11,10 @@ const useStyles = makeStyles((theme) => ({
 		height: '100vh',
 	},
 	image: {
+        display: 'flex',
+		flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: "center",
 		backgroundImage:
 			'url(https://res.cloudinary.com/whatwherewhen/image/upload/v1610996874/samples/landscapes/z2ovbbi04028jmn0aj7l.jpg)',
 		backgroundRepeat: 'no-repeat',
@@ -62,7 +66,7 @@ const Invoice = () => {
 				<TableToolbar />
 				{invoices && <InvoiceTable invoices={invoices} displayInvoiceDetail={displayInvoiceDetail} />}
 			</Grid>
-			<Grid item xs={4} className={classes.image}>
+			<Grid item xs={4}  className={classes.image}>
 				<InvoiceDetail invoiceDetail={invoiceDetail} setInvoiceDetail={setInvoiceDetail} />
 			</Grid>
 		</Grid>
