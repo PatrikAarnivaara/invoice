@@ -6,7 +6,6 @@ import TableToolbar from '../UI/TableToolbar';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline, Grid, Paper } from '@material-ui/core';
 
-
 const useStyles = makeStyles((theme) => ({
 	root: {
 		height: '100vh',
@@ -30,14 +29,7 @@ const useStyles = makeStyles((theme) => ({
 const Invoice = () => {
 	const classes = useStyles();
 	const [invoices, setInvoices] = useState([]);
-	const [invoiceDetail, setInvoiceDetail] = useState({
-		id: '',
-		type: '',
-		accountName: '',
-		status: '',
-		currency: '',
-		balance: '',
-	});
+	const [invoiceDetail, setInvoiceDetail] = useState("");
 
 	useEffect(() => {
 		const getInvoices = async () => {
@@ -71,7 +63,7 @@ const Invoice = () => {
 				{invoices && <InvoiceTable invoices={invoices} displayInvoiceDetail={displayInvoiceDetail} />}
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
-				<InvoiceDetail invoiceDetail={invoiceDetail} />
+				<InvoiceDetail invoiceDetail={invoiceDetail} setInvoiceDetail={setInvoiceDetail} />
 			</Grid>
 		</Grid>
 	);
