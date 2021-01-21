@@ -9,18 +9,27 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const InvoiceTableItem = ({ index, id, type, accountName, status, currency, balance, displayInvoiceDetail }) => {
+const InvoiceTableItem = ({
+	index,
+	id,
+	type,
+	accountName,
+	status,
+	currency,
+	balance,
+	displayInvoiceDetail,
+	selected,
+	setTrackIndex,
+}) => {
 	const classes = useStyles();
-	const [isItemSelected, setIsItemSelected] = useState(false);
 
 	const handleOnClickItem = () => {
-        console.log(id)
-		setIsItemSelected(isItemSelected => !isItemSelected);
 		displayInvoiceDetail(id, type, accountName, status, currency, balance);
+		setTrackIndex(id);
 	};
 
 	return (
-		<TableRow key={index} className={classes.root} selected={isItemSelected} hover onClick={handleOnClickItem}>
+		<TableRow key={index} className={classes.root} selected={selected} hover onClick={handleOnClickItem}>
 			<TableCell component="th" scope="row">
 				{type}
 			</TableCell>
