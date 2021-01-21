@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
+		marginTop: '30vh'
 	},
 	media: {
 		height: 140,

@@ -3,6 +3,7 @@ import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
 import TableToolbar from '../UI/TableToolbar';
+import SimpleMenu from '../UI/SimpleMenu';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline, Grid, Paper } from '@material-ui/core';
 
@@ -11,10 +12,6 @@ const useStyles = makeStyles((theme) => ({
 		height: '100vh',
 	},
 	image: {
-        display: 'flex',
-		flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: "center",
 		backgroundImage:
 			'url(https://res.cloudinary.com/whatwherewhen/image/upload/v1610996874/samples/landscapes/z2ovbbi04028jmn0aj7l.jpg)',
 		backgroundRepeat: 'no-repeat',
@@ -33,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 const Invoice = () => {
 	const classes = useStyles();
 	const [invoices, setInvoices] = useState([]);
-	const [invoiceDetail, setInvoiceDetail] = useState("");
+	const [invoiceDetail, setInvoiceDetail] = useState('');
 
 	useEffect(() => {
 		const getInvoices = async () => {
@@ -66,7 +63,8 @@ const Invoice = () => {
 				<TableToolbar />
 				{invoices && <InvoiceTable invoices={invoices} displayInvoiceDetail={displayInvoiceDetail} />}
 			</Grid>
-			<Grid item xs={4}  className={classes.image}>
+			<Grid item xs={4} className={classes.image}>
+				<SimpleMenu />
 				<InvoiceDetail invoiceDetail={invoiceDetail} setInvoiceDetail={setInvoiceDetail} />
 			</Grid>
 		</Grid>

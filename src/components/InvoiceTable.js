@@ -12,7 +12,6 @@ const useStyles = makeStyles({
 const TableDisplay = ({ invoices, displayInvoiceDetail }) => {
 	const classes = useStyles();
 	const [trackIndex, setTrackIndex] = useState();
-	console.log(trackIndex);
 
 	return (
 		<TableContainer component={Paper}>
@@ -37,7 +36,7 @@ const TableDisplay = ({ invoices, displayInvoiceDetail }) => {
 							currency={invoice.currency}
 							balance={invoice.balance}
 							displayInvoiceDetail={displayInvoiceDetail}
-							selected={invoice.id === trackIndex ? true : false}
+							selected={invoice.id === trackIndex}
 							setTrackIndex={setTrackIndex}
 						/>
 					))}
