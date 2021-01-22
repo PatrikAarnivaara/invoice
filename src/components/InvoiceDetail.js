@@ -89,7 +89,7 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 						</CardActionArea>
 						<CardActions></CardActions>
 					</Card>
-					<CloseButton closeOnClick={setInvoiceDetail} setTrackIndex={setTrackIndex}></CloseButton>
+					<CloseButton closeOnClick={setInvoiceDetail} resetIndex={setTrackIndex}></CloseButton>
 				</React.Fragment>
 			)}
 		</div>

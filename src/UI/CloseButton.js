@@ -15,12 +15,12 @@ const useStyles = makeStyles(() => ({
 	},
 }));
 
-const CloseButton = ({ closeOnClick, setTrackIndex }) => {
+const CloseButton = ({ closeOnClick, resetIndex }) => {
 	const classes = useStyles();
 
 	const handleClose = () => {
 		closeOnClick('');
-		setTrackIndex(-1);
+		resetIndex(-1);
 	};
 
 	return (
