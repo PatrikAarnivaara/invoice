@@ -61,7 +61,14 @@ const Invoice = () => {
 			<CssBaseline />
 			<Grid item xs={8} component={Paper} elevation={6}>
 				<TableToolbar />
-				{invoices && <InvoiceTable invoices={invoices} displayInvoiceDetail={displayInvoiceDetail} />}
+				{invoices && (
+					<InvoiceTable
+						invoices={invoices}
+						displayInvoiceDetail={displayInvoiceDetail}
+						setInvoiceDetail={invoiceDetail}
+					/>
+					/* <- Add spinner here -> */
+				)}
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
 				<SimpleMenu />

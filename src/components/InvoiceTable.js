@@ -11,7 +11,7 @@ const useStyles = makeStyles({
 
 const TableDisplay = ({ invoices, displayInvoiceDetail }) => {
 	const classes = useStyles();
-	const [trackIndex, setTrackIndex] = useState();
+	const [trackIndex, setTrackIndex] = useState(-1);
 
 	return (
 		<TableContainer component={Paper}>

@@ -19,7 +19,7 @@ const InvoiceTableItem = ({
 	balance,
 	displayInvoiceDetail,
 	selected,
-	setTrackIndex,
+    setTrackIndex,
 }) => {
 	const classes = useStyles();
 
