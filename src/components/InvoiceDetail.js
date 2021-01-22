@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail }) => {
+const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 	const classes = useStyles();
 	const { type, accountName, status, currency, balance } = invoiceDetail;
 
@@ -89,7 +89,7 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail }) => {
 						</CardActionArea>
 						<CardActions></CardActions>
 					</Card>
-					<CloseButton closeOnClick={setInvoiceDetail}></CloseButton>
+					<CloseButton closeOnClick={setInvoiceDetail} setTrackIndex={setTrackIndex}></CloseButton>
 				</React.Fragment>
 			)}
 		</div>

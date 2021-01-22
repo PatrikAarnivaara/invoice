@@ -31,6 +31,7 @@ const Invoice = () => {
 	const classes = useStyles();
 	const [invoices, setInvoices] = useState([]);
 	const [invoiceDetail, setInvoiceDetail] = useState('');
+	const [trackIndex, setTrackIndex] = useState(-1);
 
 	useEffect(() => {
 		const getInvoices = async () => {
@@ -66,13 +67,19 @@ const Invoice = () => {
 						invoices={invoices}
 						displayInvoiceDetail={displayInvoiceDetail}
 						setInvoiceDetail={invoiceDetail}
+						trackIndex={trackIndex}
+						setTrackIndex={setTrackIndex}
 					/>
 					/* <- Add spinner here -> */
 				)}
 			</Grid>
 			<Grid item xs={4} className={classes.image}>
 				<SimpleMenu />
-				<InvoiceDetail invoiceDetail={invoiceDetail} setInvoiceDetail={setInvoiceDetail} />
+				<InvoiceDetail
+					invoiceDetail={invoiceDetail}
+					setInvoiceDetail={setInvoiceDetail}
+					setTrackIndex={setTrackIndex}
+				/>
 			</Grid>
 		</Grid>
 	);

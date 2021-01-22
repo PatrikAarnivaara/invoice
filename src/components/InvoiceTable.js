@@ -9,9 +9,8 @@ const useStyles = makeStyles({
 	},
 });
 
-const TableDisplay = ({ invoices, displayInvoiceDetail }) => {
+const TableDisplay = ({ invoices, displayInvoiceDetail, trackIndex, setTrackIndex }) => {
 	const classes = useStyles();
-	const [trackIndex, setTrackIndex] = useState(-1);
 
 	return (
 		<TableContainer component={Paper}>
