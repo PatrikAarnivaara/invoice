@@ -11,7 +11,7 @@ import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		maxWidth: 345,
+		minWidth: 365,
 	},
 	wrapper: {
 		display: 'flex',
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: '30vh',
 	},
 	media: {
-		height: 140,
+		minHeight: 140,
 	},
 }));
 
@@ -40,47 +40,47 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 								title="Biden"
 							/>
 							<CardContent>
-								<Typography gutterBottom variant="h5" component="h2">
+								<Typography gutterBottom variant="h6" component="h2">
 									{accountName.replace(/\d(?!\d{4})/g, '*').toUpperCase()}
 								</Typography>
 								<Grid container component="main">
 									<Grid item xs={6}>
-										<Typography variant="body1" color="textPrimary" component="p">
+										<Typography variant="overline" color="textPrimary" >
 											Type
 										</Typography>
-										<Typography variant="body2" color="textSecondary" component="p">
+										<Typography variant="body2" color="textSecondary" p={1}>
 											{type}
 										</Typography>
-										<Typography variant="body1" color="textPrimary" component="p">
+										<Typography variant="overline" color="textPrimary">
 											Status
 										</Typography>
-										<Typography variant="body2" color="textSecondary" component="p">
+										<Typography variant="body2" color="textSecondary">
 											{status}
 										</Typography>
-										<Typography variant="body1" color="textPrimary" component="p">
+										<Typography variant="overline" color="textPrimary">
 											Balance
 										</Typography>
-										<Typography variant="body2" color="textSecondary" component="p">
+										<Typography variant="body2" color="textSecondary">
 											{balance}
 										</Typography>
 									</Grid>
 									<Grid item xs={6}>
-										<Typography variant="body1" color="textPrimary" component="p">
+										<Typography variant="overline" color="textPrimary">
 											Account Name
 										</Typography>
-										<Typography variant="body2" color="textSecondary" component="p">
+										<Typography variant="body2" color="textSecondary">
 											{accountName.replace(/\d(?!\d{4})/g, '*').toUpperCase()}
 										</Typography>
-										<Typography variant="body1" color="textPrimary" component="p">
+										<Typography variant="overline" color="textPrimary">
 											Currency
 										</Typography>
-										<Typography variant="body2" color="textSecondary" component="p">
+										<Typography variant="body2" color="textSecondary">
 											{currency}
 										</Typography>
-										<Typography variant="body1" color="textPrimary" component="p">
+										<Typography variant="overline" color="textPrimary" >
 											Notes
 										</Typography>
-										<Typography variant="body2" color="textSecondary" component="p">
+										<Typography variant="body2" color="textSecondary">
 											Lorem Ipsum
 										</Typography>
 									</Grid>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import orderBy from 'lodash/orderBy';
 import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
@@ -32,6 +33,16 @@ const Invoice = () => {
 	const [invoices, setInvoices] = useState([]);
 	const [invoiceDetail, setInvoiceDetail] = useState('');
 	const [trackIndex, setTrackIndex] = useState(-1);
+	const [sortAndDirection, setSortAndDirections] = useState({ columnToSort: '', sortDirection: 'desc' });
+	const invertDirection = { asc: 'desc', desc: 'asc' };
+
+	const headCells = [
+		{ id: 'type', numeric: false, disablePadding: true, label: 'Type' },
+		{ id: 'accountName', numeric: true, disablePadding: false, label: 'AccountName' },
+		{ id: 'status', numeric: true, disablePadding: false, label: 'Status' },
+		{ id: 'currency', numeric: true, disablePadding: false, label: 'Currency' },
+		{ id: 'balance', numeric: true, disablePadding: false, label: 'Balance' },
+	];
 
 	useEffect(() => {
 		const getInvoices = async () => {
@@ -57,23 +68,35 @@ const Invoice = () => {
 		});
 	};
 
+	const handleSort = (columnId) => {
+		setSortAndDirections({
+			...sortAndDirection,
+			columnToSort: columnId,
+			sortDirection:
+				sortAndDirection.columnToSort === columnId ? invertDirection[sortAndDirection.sortDirection] : 'asc',
+		});
+	};
 	return (
 		<Grid container component="main" className={classes.root}>
 			<CssBaseline />
-			<Grid item xs={8} component={Paper} elevation={6}>
+			<Grid item xs={7} component={Paper} elevation={6}>
 				<TableToolbar />
 				{invoices && (
 					<InvoiceTable
-						invoices={invoices}
+						invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
 						displayInvoiceDetail={displayInvoiceDetail}
 						setInvoiceDetail={invoiceDetail}
 						trackIndex={trackIndex}
 						setTrackIndex={setTrackIndex}
+						headCells={headCells}
+						handleSort={handleSort}
+						columnToSort={sortAndDirection.columnToSort}
+						sortDirection={sortAndDirection.sortDirection}
 					/>
 					/* <- Add spinner here -> */
 				)}
 			</Grid>
-			<Grid item xs={4} className={classes.image}>
+			<Grid item xs={5} className={classes.image}>
 				<SimpleMenu />
 				<InvoiceDetail
 					invoiceDetail={invoiceDetail}
