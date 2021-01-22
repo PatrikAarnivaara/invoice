@@ -30,6 +30,7 @@ const TableDisplay = ({
 }) => {
 	const classes = useStyles();
 
+
 	return (
 		<TableContainer component={Paper}>
 			<Table className={classes.table} aria-label="caption table">
