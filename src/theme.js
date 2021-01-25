@@ -11,14 +11,15 @@ const theme = createMuiTheme({
 			contrastText: pink[900],
 		},
 	},
+	/* spacing: 8, */
 });
 
 theme.props = {
-	MuiTypography: {
-		/* color: 'textSecondary', */
-	},
 	MuiToolbar: {
 		variant: 'regular',
+	},
+	MuiTooltip: {
+		arrow: true,
 	},
 	MuiIcon: {
 		fontSize: 'large',
@@ -29,8 +30,9 @@ theme.overrides = {
 	MuiGrid: {},
 	MuiIconButton: {
 		root: {
-			color: '#FAFAFA',
-			opacity: 0.8,
+			color: '#9E9E9E',
+			/* opacity: 0.8, */
+			backgroundColor: '#ECEFF1',
 		},
 	},
 	MuiTableRow: {

@@ -3,7 +3,7 @@ import { orderBy /* filter */ } from 'lodash';
 import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
-import TableToolbar from '../UI/TableToolbar';
+
 import SimpleMenu from '../UI/SimpleMenu';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline, Grid, Paper } from '@material-ui/core';
@@ -20,10 +20,10 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: 'center',
 	},
 	paper: {
-		margin: theme.spacing(4, 8),
-		display: 'flex',
+		/* margin: theme.spacing(4, 8), */
+		/* display: 'flex',
 		flexDirection: 'column',
-		alignItems: 'center',
+		alignItems: 'center', */
 	},
 }));
 
@@ -82,10 +82,10 @@ const Invoice = () => {
 		});
 	};
 	return (
-		<Grid container /* component="main" className={classes.root} */>
+		<Grid container component="main" /*  className={classes.root} */>
 			{/* <CssBaseline /> */}
 			<Grid item xs={7} component={Paper} elevation={6}>
-				<TableToolbar />
+				
 				{invoices && (
 					<InvoiceTable
 						invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
@@ -101,14 +101,14 @@ const Invoice = () => {
 					/* <- Add spinner here -> */
 				)}
 			</Grid>
-			<Grid item xs={5} className={classes.image}>
+			{/* <Grid item xs={5} className={classes.image}>
 				<SimpleMenu />
 				<InvoiceDetail
 					invoiceDetail={invoiceDetail}
 					setInvoiceDetail={setInvoiceDetail}
 					setTrackIndex={setTrackIndex}
 				/>
-			</Grid>
+			</Grid> */}
 		</Grid>
 	);
 };

@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 const TableToolbar = () => {
 	return (
 		<Toolbar variant="regular">
-			<Typography variant="h5" color="primary">
+			<Typography variant="h5" component="h6" color="primary">
 				All invoices - {new Date().getFullYear()}
 			</Typography>
 			<Tooltip title="Filter list">
