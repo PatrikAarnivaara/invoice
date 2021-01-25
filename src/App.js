@@ -1,10 +1,12 @@
 import Invoice from './components/Invoice';
+import { ThemeProvider } from '@material-ui/core';
+import theme from './theme';
 
 const App = () => {
 	return (
-		<div>
+		<ThemeProvider theme={theme}>
 			<Invoice />
-		</div>
+		</ThemeProvider>
 	);
 };
 

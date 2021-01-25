@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { orderBy, filter } from 'lodash';
+import { orderBy /* filter */ } from 'lodash';
 import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
 		backgroundImage:
 			'url(https://res.cloudinary.com/whatwherewhen/image/upload/v1610996874/samples/landscapes/z2ovbbi04028jmn0aj7l.jpg)',
 		backgroundRepeat: 'no-repeat',
-		backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
 	},
@@ -44,11 +43,11 @@ const Invoice = () => {
 	const [sortAndDirection, setSortAndDirections] = useState({ columnToSort: '', sortDirection: 'desc' });
 	const invertDirection = { asc: 'desc', desc: 'asc' };
 
-	console.log(
+	/* console.log(
 		filter(invoices, (invoice) => {
 			return invoice.accountName.includes("wol");
 		})
-	);
+	); */
 
 	useEffect(() => {
 		const getInvoices = async () => {
@@ -83,8 +82,8 @@ const Invoice = () => {
 		});
 	};
 	return (
-		<Grid container component="main" className={classes.root}>
-			<CssBaseline />
+		<Grid container /* component="main" className={classes.root} */>
+			{/* <CssBaseline /> */}
 			<Grid item xs={7} component={Paper} elevation={6}>
 				<TableToolbar />
 				{invoices && (
