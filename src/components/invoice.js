@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import orderBy from 'lodash/orderBy';
+import { orderBy, filter } from 'lodash';
 import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
@@ -28,6 +28,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+const headCells = [
+	{ id: 'type', numeric: false, disablePadding: true, label: 'Type' },
+	{ id: 'accountName', numeric: true, disablePadding: false, label: 'AccountName' },
+	{ id: 'status', numeric: false, disablePadding: false, label: 'Status' },
+	{ id: 'currency', numeric: false, disablePadding: false, label: 'Currency' },
+	{ id: 'balance', numeric: true, disablePadding: false, label: 'Balance' },
+];
+
 const Invoice = () => {
 	const classes = useStyles();
 	const [invoices, setInvoices] = useState([]);
@@ -36,13 +44,11 @@ const Invoice = () => {
 	const [sortAndDirection, setSortAndDirections] = useState({ columnToSort: '', sortDirection: 'desc' });
 	const invertDirection = { asc: 'desc', desc: 'asc' };
 
-	const headCells = [
-		{ id: 'type', numeric: false, disablePadding: true, label: 'Type' },
-		{ id: 'accountName', numeric: true, disablePadding: false, label: 'AccountName' },
-		{ id: 'status', numeric: true, disablePadding: false, label: 'Status' },
-		{ id: 'currency', numeric: true, disablePadding: false, label: 'Currency' },
-		{ id: 'balance', numeric: true, disablePadding: false, label: 'Balance' },
-	];
+	console.log(
+		filter(invoices, (invoice) => {
+			return invoice.accountName.includes("wol");
+		})
+	);
 
 	useEffect(() => {
 		const getInvoices = async () => {
