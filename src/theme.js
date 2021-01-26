@@ -1,17 +1,15 @@
 import { createMuiTheme } from '@material-ui/core';
-import { pink, deepPurple } from '@material-ui/core/colors';
+import { red, grey } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
 	palette: {
 		primary: {
-			main: pink[600],
+			main: red[700],
 		},
 		secondary: {
-			main: deepPurple[500],
-			contrastText: pink[900],
+			main: grey[200],
 		},
 	},
-	/* spacing: 8, */
 });
 
 theme.props = {
@@ -27,25 +25,18 @@ theme.props = {
 };
 
 theme.overrides = {
-	MuiGrid: {},
-	MuiIconButton: {
-		root: {
-			color: '#9E9E9E',
-			marginTop: '0.8em',
-			opacity: 0.8,
-		},
-	},
 	MuiTableRow: {
 		root: {
 			cursor: 'pointer',
 		},
 	},
 	MuiTypography: {
-		h6: {
-			color: '#9E9E9E',
+		h5: {
+			fontWeight: 500,
+			marginLeft: '0.2em',
 		},
 		subtitle1: {
-			color: '#607D8B',
+			color: '#212121',
 			marginLeft: '1em',
 			marginTop: '1em',
 		},
