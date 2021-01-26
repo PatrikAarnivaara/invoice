@@ -42,7 +42,7 @@ theme.overrides = {
 		},
 		overline: {
 			color: '#BDBDBD',
-			lineHeight: 1.2
+			lineHeight: 1.2,
 		},
 		body2: {
 			color: '#212121',
