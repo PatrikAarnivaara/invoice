@@ -6,6 +6,7 @@ import InvoiceDetail from './InvoiceDetail';
 import SimpleMenu from '../UI/SimpleMenu';
 import { Grid, Paper } from '@material-ui/core';
 
+// TODO: move to app?
 const headCells = [
 	{ id: 'type', numeric: false, disablePadding: true, label: 'Type' },
 	{ id: 'accountName', numeric: true, disablePadding: false, label: 'AccountName' },
@@ -62,7 +63,7 @@ const Invoice = () => {
 	};
 	return (
 		<Grid container component="main">
-			<Grid item xs={7} component={Paper} elevation={6}>
+			<Grid item xs={10} component={Paper} elevation={6}>
 				{invoices && (
 					<InvoiceTable
 						invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
@@ -79,7 +80,7 @@ const Invoice = () => {
 				)}
 			</Grid>
 			{
-				<Grid item xs={5} /* className={classes.image} */>
+				<Grid item xs={0}>
 					<SimpleMenu />
 					<InvoiceDetail
 						invoiceDetail={invoiceDetail}

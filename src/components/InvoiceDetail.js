@@ -10,6 +10,8 @@ const useStyles = makeStyles(() => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		marginTop: '30vh',
+		marginLeft: '10vw',
+		position: 'absolute',
 	},
 }));
 
@@ -57,10 +59,7 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 							</CardContent>
 						</CardActionArea>
 					</Card>
-					<CloseButton
-						closeOnClick={setInvoiceDetail}
-						resetIndex={setTrackIndex}
-					></CloseButton>
+					<CloseButton closeOnClick={setInvoiceDetail} resetIndex={setTrackIndex}></CloseButton>
 				</div>
 			)}
 		</div>

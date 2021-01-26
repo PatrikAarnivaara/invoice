@@ -40,9 +40,6 @@ theme.overrides = {
 			cursor: 'pointer',
 		},
 	},
-	MuiToolbar: {
-		root: { flex: '1 1 100%' },
-	},
 	MuiTypography: {
 		h6: {
 			color: '#9E9E9E',

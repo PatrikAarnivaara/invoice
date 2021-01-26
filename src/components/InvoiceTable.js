@@ -23,9 +23,11 @@ const TableDisplay = ({
 	sortDirection,
 }) => {
 	return (
-		<React.Fragment>
+		<div>
 			<TableContainer>
-				<Typography variant="subtitle1" gutterBottom>Invoices</Typography>
+				<Typography variant="subtitle1" gutterBottom>
+					Invoices
+				</Typography>
 				<Table aria-label="caption table">
 					<TableHead>
 						<TableRow>
@@ -58,7 +60,7 @@ const TableDisplay = ({
 					</TableBody>
 				</Table>
 			</TableContainer>
-		</React.Fragment>
+		</div>
 	);
 };
 
