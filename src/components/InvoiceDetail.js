@@ -1,16 +1,27 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import CloseButton from '../UI/CloseButton';
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Grid } from '@material-ui/core';
+import { Card, CardActionArea, CardContent, CardMedia, Typography, Grid } from '@material-ui/core';
+
+const useStyles = makeStyles(() => ({
+	root: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		marginTop: '30vh',
+	},
+}));
 
 const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
+	const classes = useStyles();
 	const { type, accountName, status, currency, balance } = invoiceDetail;
 
 	return (
-		<React.Fragment>
+		<div>
 			{invoiceDetail !== '' && (
-				<div>
-					<Card>
+				<div className={classes.root}>
+					<Card raised>
 						<CardActionArea>
 							<CardMedia
 								component="img"
@@ -45,12 +56,14 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 								</Grid>
 							</CardContent>
 						</CardActionArea>
-						<CardActions></CardActions>
 					</Card>
-					<CloseButton closeOnClick={setInvoiceDetail} resetIndex={setTrackIndex}></CloseButton>
+					<CloseButton
+						closeOnClick={setInvoiceDetail}
+						resetIndex={setTrackIndex}
+					></CloseButton>
 				</div>
 			)}
-		</React.Fragment>
+		</div>
 	);
 };
 

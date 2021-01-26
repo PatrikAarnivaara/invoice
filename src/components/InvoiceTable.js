@@ -25,7 +25,7 @@ const TableDisplay = ({
 	return (
 		<React.Fragment>
 			<TableContainer>
-				<Typography variant="subtitle1">Invoices</Typography>
+				<Typography variant="subtitle1" gutterBottom>Invoices</Typography>
 				<Table aria-label="caption table">
 					<TableHead>
 						<TableRow>

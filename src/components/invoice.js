@@ -3,29 +3,8 @@ import { orderBy /* filter */ } from 'lodash';
 import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
-
 import SimpleMenu from '../UI/SimpleMenu';
-import { makeStyles } from '@material-ui/core/styles';
-import { CssBaseline, Grid, Paper } from '@material-ui/core';
-
-const useStyles = makeStyles((theme) => ({
-	root: {
-		height: '100vh',
-	},
-	image: {
-		backgroundImage:
-			'url(https://res.cloudinary.com/whatwherewhen/image/upload/v1610996874/samples/landscapes/z2ovbbi04028jmn0aj7l.jpg)',
-		backgroundRepeat: 'no-repeat',
-		backgroundSize: 'cover',
-		backgroundPosition: 'center',
-	},
-	paper: {
-		/* margin: theme.spacing(4, 8), */
-		/* display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center', */
-	},
-}));
+import { Grid, Paper } from '@material-ui/core';
 
 const headCells = [
 	{ id: 'type', numeric: false, disablePadding: true, label: 'Type' },
@@ -36,7 +15,7 @@ const headCells = [
 ];
 
 const Invoice = () => {
-	const classes = useStyles();
+	
 	const [invoices, setInvoices] = useState([]);
 	const [invoiceDetail, setInvoiceDetail] = useState('');
 	const [trackIndex, setTrackIndex] = useState(-1);
@@ -82,10 +61,8 @@ const Invoice = () => {
 		});
 	};
 	return (
-		<Grid container component="main" /*  className={classes.root} */>
-			{/* <CssBaseline /> */}
+		<Grid container component="main">
 			<Grid item xs={7} component={Paper} elevation={6}>
-				
 				{invoices && (
 					<InvoiceTable
 						invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
@@ -101,14 +78,16 @@ const Invoice = () => {
 					/* <- Add spinner here -> */
 				)}
 			</Grid>
-			{/* <Grid item xs={5} className={classes.image}>
-				<SimpleMenu />
-				<InvoiceDetail
-					invoiceDetail={invoiceDetail}
-					setInvoiceDetail={setInvoiceDetail}
-					setTrackIndex={setTrackIndex}
-				/>
-			</Grid> */}
+			{
+				<Grid item xs={5} /* className={classes.image} */>
+					<SimpleMenu />
+					<InvoiceDetail
+						invoiceDetail={invoiceDetail}
+						setInvoiceDetail={setInvoiceDetail}
+						setTrackIndex={setTrackIndex}
+					/>
+				</Grid>
+			}
 		</Grid>
 	);
 };

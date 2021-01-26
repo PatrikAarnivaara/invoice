@@ -31,8 +31,8 @@ theme.overrides = {
 	MuiIconButton: {
 		root: {
 			color: '#9E9E9E',
-			/* opacity: 0.8, */
-			backgroundColor: '#ECEFF1',
+			marginTop: '0.8em',
+			opacity: 0.8,
 		},
 	},
 	MuiTableRow: {
@@ -50,12 +50,14 @@ theme.overrides = {
 		subtitle1: {
 			color: '#607D8B',
 			marginLeft: '1em',
+			marginTop: '1em',
 		},
 		overline: {
 			color: '#BDBDBD',
 		},
 		body2: {
 			color: '#212121',
+			marginBottom: '0.6em',
 		},
 	},
 	MuiCard: {
