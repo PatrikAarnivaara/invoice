@@ -1,6 +1,5 @@
 import React from 'react';
 import InvoiceTableItem from './InvoiceTableItem';
-
 import {
 	Table,
 	TableBody,
