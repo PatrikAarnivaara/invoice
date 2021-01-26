@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
-import { Menu, MenuItem } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
+import { Button, Menu, MenuItem } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles(() => ({
 	root: {

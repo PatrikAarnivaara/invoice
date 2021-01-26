@@ -1,9 +1,7 @@
-import Invoice from './components/Invoices';
-import { ThemeProvider } from '@material-ui/core';
-import TableToolbar from './UI/TableToolbar';
 import theme from './theme';
-import { CssBaseline, Grid } from '@material-ui/core';
-
+import Invoice from './components/Invoices';
+import TableToolbar from './UI/TableToolbar';
+import { ThemeProvider, CssBaseline, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({

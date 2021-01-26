@@ -1,32 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { orderBy /* filter */ } from 'lodash';
+import { orderBy } from 'lodash';
 import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
 import SimpleMenu from '../UI/SimpleMenu';
 import { Grid, Paper } from '@material-ui/core';
 
-// TODO: move to app?
 const headCells = [
-	{ id: 'type', numeric: false, disablePadding: true, label: 'Type' },
-	{ id: 'accountName', numeric: true, disablePadding: false, label: 'AccountName' },
-	{ id: 'status', numeric: false, disablePadding: false, label: 'Status' },
-	{ id: 'currency', numeric: false, disablePadding: false, label: 'Currency' },
-	{ id: 'balance', numeric: true, disablePadding: false, label: 'Balance' },
+	{ id: 'type', label: 'Type' },
+	{ id: 'accountName', label: 'AccountName' },
+	{ id: 'status', label: 'Status' },
+	{ id: 'currency', label: 'Currency' },
+	{ id: 'balance', label: 'Balance' },
 ];
 
 const Invoice = () => {
 	const [invoices, setInvoices] = useState([]);
 	const [invoiceDetail, setInvoiceDetail] = useState('');
 	const [trackIndex, setTrackIndex] = useState(-1);
-	const [sortAndDirection, setSortAndDirections] = useState({ columnToSort: '', sortDirection: 'desc' });
+	const [sortAndDirection, setSortAndDirection] = useState({ columnToSort: '', sortDirection: 'desc' });
 	const invertDirection = { asc: 'desc', desc: 'asc' };
-
-	/* console.log(
-		filter(invoices, (invoice) => {
-			return invoice.accountName.includes("wol");
-		})
-	); */
 
 	useEffect(() => {
 		const getInvoices = async () => {
@@ -53,7 +46,7 @@ const Invoice = () => {
 	};
 
 	const handleSort = (columnId) => {
-		setSortAndDirections({
+		setSortAndDirection({
 			...sortAndDirection,
 			columnToSort: columnId,
 			sortDirection:
@@ -87,7 +80,6 @@ const Invoice = () => {
 					/>
 				</Grid>
 			</Grid>
-			
 		</div>
 	);
 };
