@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	root: {
 		height: '100vh',
+		marginLeft: '1em'
 	},
 	image: {
 		backgroundImage:
@@ -27,12 +28,11 @@ const App = () => {
 			<CssBaseline />
 			<Container disableGutters>
 				<Grid container component="main" className={classes.root}>
-					<Grid item xs={12} sm={3} md={7} /* sm={8} */>
+					<Grid item xs={12} sm={7} >
 						<TableToolbar />
 						<Invoice />
 					</Grid>
-					<Grid item xs={false} sm={9} md={5} className={classes.image} /* sm={8} */>
-					</Grid>
+					<Grid item xs={false} sm={5} className={classes.image}></Grid>
 				</Grid>
 			</Container>
 		</ThemeProvider>

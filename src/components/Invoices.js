@@ -62,9 +62,8 @@ const Invoice = () => {
 	};
 	return (
 		<div>
-			return (
 			<Grid container component="main">
-				<Grid item xs={10} component={Paper} elevation={6}>
+				<Grid item xs={11} component={Paper} elevation={6}>
 					{invoices && (
 						<InvoiceTable
 							invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
@@ -79,7 +78,7 @@ const Invoice = () => {
 						/>
 					)}
 				</Grid>
-				<Grid item xs={2}>
+				<Grid item xs={1}>
 					<SimpleMenu />
 					<InvoiceDetail
 						invoiceDetail={invoiceDetail}
@@ -88,7 +87,7 @@ const Invoice = () => {
 					/>
 				</Grid>
 			</Grid>
-			);
+			
 		</div>
 	);
 };
