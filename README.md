@@ -3,8 +3,7 @@
 Application consisting of a table of invoices. Each invoice can be viewed in detail by clicking a row and individual columns can be sorted.  
 
 ## Screenshots
-![](screenshot1.png)
-![](screenshot2.png)
+![](screenshot.png)
 
 ## Technologies
 * React
