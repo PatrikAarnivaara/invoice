@@ -21,8 +21,8 @@ Application consisting of a table of invoices. Each invoice can be viewed in det
 ## Setup
 1. Clone repo and run in optional IDE
 2. cd into folder invoice
-3. npm install
-4. ##### `npm start`
+3. npm install - wait until all dependencies are installed
+4. npm start
 5. Application opens at localhost:3000
 
 ## Status
