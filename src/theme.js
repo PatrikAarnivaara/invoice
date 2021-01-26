@@ -27,14 +27,6 @@ theme.props = {
 };
 
 theme.overrides = {
-	MuiGrid: {},
-	MuiIconButton: {
-		root: {
-			color: '#9E9E9E',
-			marginTop: '0.8em',
-			opacity: 0.8,
-		},
-	},
 	MuiTableRow: {
 		root: {
 			cursor: 'pointer',

@@ -16,7 +16,6 @@ const headCells = [
 ];
 
 const Invoice = () => {
-	
 	const [invoices, setInvoices] = useState([]);
 	const [invoiceDetail, setInvoiceDetail] = useState('');
 	const [trackIndex, setTrackIndex] = useState(-1);
@@ -62,25 +61,25 @@ const Invoice = () => {
 		});
 	};
 	return (
-		<Grid container component="main">
-			<Grid item xs={10} component={Paper} elevation={6}>
-				{invoices && (
-					<InvoiceTable
-						invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
-						displayInvoiceDetail={displayInvoiceDetail}
-						setInvoiceDetail={invoiceDetail}
-						trackIndex={trackIndex}
-						setTrackIndex={setTrackIndex}
-						headCells={headCells}
-						handleSort={handleSort}
-						columnToSort={sortAndDirection.columnToSort}
-						sortDirection={sortAndDirection.sortDirection}
-					/>
-					/* <- Add spinner here -> */
-				)}
-			</Grid>
-			{
-				<Grid item xs={0}>
+		<div>
+			return (
+			<Grid container component="main">
+				<Grid item xs={10} component={Paper} elevation={6}>
+					{invoices && (
+						<InvoiceTable
+							invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
+							displayInvoiceDetail={displayInvoiceDetail}
+							setInvoiceDetail={invoiceDetail}
+							trackIndex={trackIndex}
+							setTrackIndex={setTrackIndex}
+							headCells={headCells}
+							handleSort={handleSort}
+							columnToSort={sortAndDirection.columnToSort}
+							sortDirection={sortAndDirection.sortDirection}
+						/>
+					)}
+				</Grid>
+				<Grid item xs={2}>
 					<SimpleMenu />
 					<InvoiceDetail
 						invoiceDetail={invoiceDetail}
@@ -88,8 +87,9 @@ const Invoice = () => {
 						setTrackIndex={setTrackIndex}
 					/>
 				</Grid>
-			}
-		</Grid>
+			</Grid>
+			);
+		</div>
 	);
 };
 
