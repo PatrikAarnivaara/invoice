@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		marginTop: '20vh',
+		marginTop: '18vh',
 		marginLeft: '10vw',
 		position: 'absolute',
 	},
@@ -34,7 +34,7 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 								<Typography gutterBottom variant="h6">
 									{accountName.replace(/\d(?!\d{4})/g, '*').toUpperCase()}
 								</Typography>
-								<Grid container spacing={2}>
+								<Grid container>
 									<Grid item xs={6}>
 										<Typography variant="overline">Type</Typography>
 										<Typography variant="body2" p={1}>

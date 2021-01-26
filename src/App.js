@@ -1,6 +1,5 @@
 import Invoice from './components/Invoices';
 import { ThemeProvider } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
 import TableToolbar from './UI/TableToolbar';
 import theme from './theme';
 import { CssBaseline, Grid } from '@material-ui/core';
@@ -10,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	root: {
 		height: '100vh',
-		marginLeft: '1em'
+		marginLeft: '2em',
 	},
 	image: {
 		backgroundImage:
@@ -26,15 +25,13 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Container disableGutters>
-				<Grid container component="main" className={classes.root}>
-					<Grid item xs={12} sm={7} >
-						<TableToolbar />
-						<Invoice />
-					</Grid>
-					<Grid item xs={false} sm={5} className={classes.image}></Grid>
+			<Grid container component="main" className={classes.root}>
+				<Grid item xs={12} sm={7}>
+					<TableToolbar />
+					<Invoice />
 				</Grid>
-			</Container>
+				<Grid item xs={false} sm={5} className={classes.image}></Grid>
+			</Grid>
 		</ThemeProvider>
 	);
 };

@@ -10,7 +10,7 @@ const CloseButton = ({ closeOnClick, resetIndex }) => {
 
 	return (
 		<IconButton aria-label="close card" onClick={handleClose}>
-			<CloseIcon />
+			<CloseIcon color="secondary" fontSize="large" />
 		</IconButton>
 	);
 };
