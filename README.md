@@ -12,7 +12,7 @@ Application consisting of a table of invoices. Each invoice can be viewed in det
 
 ## Features
 * Table of invoices
-* Detaied view of invoice
+* Detailed view of invoice
 * Sort columns
 
 ## Api
