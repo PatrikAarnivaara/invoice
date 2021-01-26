@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	root: {
 		height: '100vh',
-		marginLeft: '2em',
+		marginLeft: '1em',
 	},
 	image: {
 		backgroundImage:
@@ -25,7 +25,7 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Grid container component="main" className={classes.root}>
+			<Grid container component="main" className={classes.root} spacing={8}>
 				<Grid item xs={12} sm={7}>
 					<TableToolbar />
 					<Invoice />

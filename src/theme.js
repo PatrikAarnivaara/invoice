@@ -4,8 +4,7 @@ import { red, grey } from '@material-ui/core/colors';
 const theme = createMuiTheme({
 	palette: {
 		primary: {
-            main: red[700],
-            
+			main: red[700],
 		},
 		secondary: {
 			main: grey[200],
@@ -33,8 +32,8 @@ theme.overrides = {
 	},
 	MuiTypography: {
 		h5: {
-            fontWeight: 'Medium',
-            marginLeft: '0.2em'
+			fontWeight: 500,
+			marginLeft: '0.2em',
 		},
 		subtitle1: {
 			color: '#212121',
