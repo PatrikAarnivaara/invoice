@@ -1,4 +1,4 @@
-import Invoice from './components/Invoice';
+import Invoice from './components/Invoices';
 import { ThemeProvider } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import TableToolbar from './UI/TableToolbar';
