@@ -1,6 +1,13 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
 import { TableCell, TableRow } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(() => ({
+	selectedRow: {
+		backgroundColor: '#ffebee',
+	},
+}));
 
 const InvoiceTableItem = ({
 	index,
@@ -14,13 +21,15 @@ const InvoiceTableItem = ({
 	selected,
 	setTrackIndex,
 }) => {
+	const classes = useStyles();
+
 	const handleOnClickItem = () => {
 		displayInvoiceDetail(id, type, accountName, status, currency, balance);
 		setTrackIndex(id);
 	};
 
 	return (
-		<TableRow key={index} selected={selected} hover onClick={handleOnClickItem}>
+		<TableRow key={index} className={selected && classes.selectedRow} hover onClick={handleOnClickItem}>
 			<TableCell component="th" scope="row">
 				{type}
 			</TableCell>
