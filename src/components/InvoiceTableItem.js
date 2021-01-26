@@ -12,9 +12,8 @@ const InvoiceTableItem = ({
 	balance,
 	displayInvoiceDetail,
 	selected,
-    setTrackIndex,
+	setTrackIndex,
 }) => {
-
 	const handleOnClickItem = () => {
 		displayInvoiceDetail(id, type, accountName, status, currency, balance);
 		setTrackIndex(id);

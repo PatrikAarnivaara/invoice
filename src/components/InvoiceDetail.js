@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
 import CloseButton from '../UI/CloseButton';
 import { Card, CardActionArea, CardContent, CardMedia, Typography, Grid } from '@material-ui/core';
 
@@ -9,7 +8,7 @@ const useStyles = makeStyles(() => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		marginTop: '18vh',
+		marginTop: '15vh',
 		marginLeft: '8vw',
 		position: 'absolute',
 	},
@@ -64,12 +63,6 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 			)}
 		</div>
 	);
-};
-
-InvoiceDetail.propTypes = {
-	invoiceDetail: PropTypes.object,
-	setInvoiceDetail: PropTypes.func,
-	setTrackIndex: PropTypes.func,
 };
 
 export default InvoiceDetail;
