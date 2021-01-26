@@ -42,10 +42,11 @@ theme.overrides = {
 		},
 		overline: {
 			color: '#BDBDBD',
+			lineHeight: 1.2
 		},
 		body2: {
 			color: '#212121',
-			marginBottom: '0.6em',
+			marginBottom: '0.5em',
 		},
 	},
 	MuiCard: {
