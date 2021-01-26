@@ -1,33 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { orderBy, filter } from 'lodash';
+import { orderBy /* filter */ } from 'lodash';
 import mockApi from '../api/mockApi';
 import InvoiceTable from './InvoiceTable';
 import InvoiceDetail from './InvoiceDetail';
-import TableToolbar from '../UI/TableToolbar';
 import SimpleMenu from '../UI/SimpleMenu';
-import { makeStyles } from '@material-ui/core/styles';
-import { CssBaseline, Grid, Paper } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		height: '100vh',
-	},
-	image: {
-		backgroundImage:
-			'url(https://res.cloudinary.com/whatwherewhen/image/upload/v1610996874/samples/landscapes/z2ovbbi04028jmn0aj7l.jpg)',
-		backgroundRepeat: 'no-repeat',
-		backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-		backgroundSize: 'cover',
-		backgroundPosition: 'center',
-	},
-	paper: {
-		margin: theme.spacing(4, 8),
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-	},
-}));
-
+// TODO: move to app?
 const headCells = [
 	{ id: 'type', numeric: false, disablePadding: true, label: 'Type' },
 	{ id: 'accountName', numeric: true, disablePadding: false, label: 'AccountName' },
@@ -37,18 +16,18 @@ const headCells = [
 ];
 
 const Invoice = () => {
-	const classes = useStyles();
+	
 	const [invoices, setInvoices] = useState([]);
 	const [invoiceDetail, setInvoiceDetail] = useState('');
 	const [trackIndex, setTrackIndex] = useState(-1);
 	const [sortAndDirection, setSortAndDirections] = useState({ columnToSort: '', sortDirection: 'desc' });
 	const invertDirection = { asc: 'desc', desc: 'asc' };
 
-	console.log(
+	/* console.log(
 		filter(invoices, (invoice) => {
 			return invoice.accountName.includes("wol");
 		})
-	);
+	); */
 
 	useEffect(() => {
 		const getInvoices = async () => {
@@ -83,10 +62,8 @@ const Invoice = () => {
 		});
 	};
 	return (
-		<Grid container component="main" className={classes.root}>
-			<CssBaseline />
-			<Grid item xs={7} component={Paper} elevation={6}>
-				<TableToolbar />
+		<Grid container component="main">
+			<Grid item xs={10} component={Paper} elevation={6}>
 				{invoices && (
 					<InvoiceTable
 						invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
@@ -102,14 +79,16 @@ const Invoice = () => {
 					/* <- Add spinner here -> */
 				)}
 			</Grid>
-			<Grid item xs={5} className={classes.image}>
-				<SimpleMenu />
-				<InvoiceDetail
-					invoiceDetail={invoiceDetail}
-					setInvoiceDetail={setInvoiceDetail}
-					setTrackIndex={setTrackIndex}
-				/>
-			</Grid>
+			{
+				<Grid item xs={0}>
+					<SimpleMenu />
+					<InvoiceDetail
+						invoiceDetail={invoiceDetail}
+						setInvoiceDetail={setInvoiceDetail}
+						setTrackIndex={setTrackIndex}
+					/>
+				</Grid>
+			}
 		</Grid>
 	);
 };
