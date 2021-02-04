@@ -6,8 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	selectedRow: {
 		backgroundColor: '#ffebee',
-		borderStyle: 'solid',
-		borderColor: 'coral',
+		border: '8px solid',
+		borderColor: '#e3a6b2',
 		borderBottom: '0',
 		borderTop: '0',
 		borderRight: '0',

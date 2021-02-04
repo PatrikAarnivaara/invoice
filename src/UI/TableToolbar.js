@@ -11,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	title: {
 		flexGrow: 1,
-		color: 'coral',
+		color: '#d6677c',
 	},
 	filter: {
-		color: 'coral',
+		color: '#d6677c',
 	},
 }));
 
