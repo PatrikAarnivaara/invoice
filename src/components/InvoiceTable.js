@@ -11,7 +11,7 @@ import {
 	Typography,
 } from '@material-ui/core';
 
-const TableDisplay = ({
+const InvoiceTable = ({
 	invoices,
 	displayInvoiceDetail,
 	trackIndex,
@@ -63,4 +63,4 @@ const TableDisplay = ({
 	);
 };
 
-export default TableDisplay;
+export default InvoiceTable;

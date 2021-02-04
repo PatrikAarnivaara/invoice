@@ -1,5 +1,5 @@
 import theme from './theme';
-import Invoice from './components/Invoices';
+import Invoice from './components/Invoice';
 import TableToolbar from './UI/TableToolbar';
 import { ThemeProvider, CssBaseline, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
