@@ -9,8 +9,12 @@ const useStyles = makeStyles((theme) => ({
 		paddingTop: '1em',
 		paddingBottom: '1em',
 	},
-	filter: {
+	title: {
 		flexGrow: 1,
+		color: 'coral',
+	},
+	filter: {
+		color: 'coral',
 	},
 }));
 
@@ -19,11 +23,11 @@ const TableToolbar = () => {
 	return (
 		<div className={classes.root}>
 			<Toolbar variant="regular" disableGutters>
-				<Typography className={classes.filter} variant="h5" color="primary">
+				<Typography className={classes.title} variant="h6">
 					All invoices - {new Date().getFullYear()}
 				</Typography>
 				<Tooltip title="Filter list under development...">
-					<IconButton aria-label="filter list" color="primary">
+					<IconButton aria-label="filter list" className={classes.filter}>
 						<FilterListIcon />
 					</IconButton>
 				</Tooltip>

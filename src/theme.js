@@ -31,8 +31,7 @@ theme.overrides = {
 		},
 	},
 	MuiTypography: {
-		h5: {
-			fontWeight: 500,
+		h6: {
 			marginLeft: '0.2em',
 		},
 		subtitle1: {
