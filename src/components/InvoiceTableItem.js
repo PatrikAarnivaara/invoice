@@ -29,7 +29,7 @@ const InvoiceTableItem = ({
 	};
 
 	return (
-		<TableRow key={index} className={selected && classes.selectedRow} hover onClick={handleOnClickItem}>
+		<TableRow key={index} className={selected ? classes.selectedRow : ''} hover onClick={handleOnClickItem}>
 			<TableCell component="th" scope="row">
 				{type}
 			</TableCell>
