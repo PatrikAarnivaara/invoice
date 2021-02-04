@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NumberFormat from 'react-number-format';
 import { TableCell, TableRow } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -22,14 +22,22 @@ const InvoiceTableItem = ({
 	setTrackIndex,
 }) => {
 	const classes = useStyles();
+	const [handleHover, setHandleHover] = useState(true);
 
 	const handleOnClickItem = () => {
+		setHandleHover(false);
 		displayInvoiceDetail(id, type, accountName, status, currency, balance);
 		setTrackIndex(id);
 	};
 
 	return (
-		<TableRow key={index} className={selected ? classes.selectedRow : ''} hover onClick={handleOnClickItem}>
+		<TableRow
+			key={index}
+			className={selected ? classes.selectedRow : ''}
+			onClick={handleOnClickItem}
+			hover={handleHover}
+			onMouseOut={() => setHandleHover(true)}
+		>
 			<TableCell component="th" scope="row">
 				{type}
 			</TableCell>
