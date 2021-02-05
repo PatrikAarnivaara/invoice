@@ -14,6 +14,7 @@ import {
 const InvoiceTable = ({
 	invoices,
 	displayInvoiceDetail,
+	setInvoiceDetail,
 	trackIndex,
 	setTrackIndex,
 	headCells,
@@ -54,6 +55,7 @@ const InvoiceTable = ({
 								displayInvoiceDetail={displayInvoiceDetail}
 								selected={invoice.id === trackIndex}
 								setTrackIndex={setTrackIndex}
+								setInvoiceDetail={setInvoiceDetail}
 							/>
 						))}
 					</TableBody>

@@ -58,6 +58,12 @@ theme.overrides = {
 			maxHeight: 165,
 		},
 	},
+	MuiButton: {
+		root: {
+			backgroundColor: '#ffffff',
+			/* padding: 20, */
+		}
+	}
 };
 
 export default theme;

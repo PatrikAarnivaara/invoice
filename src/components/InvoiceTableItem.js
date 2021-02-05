@@ -6,11 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
 	selectedRow: {
 		backgroundColor: '#ffebee',
-		border: '8px solid',
-		borderColor: '#e3a6b2',
-		borderBottom: '0',
-		borderTop: '0',
-		borderRight: '0',
 	},
 }));
 
@@ -25,6 +20,7 @@ const InvoiceTableItem = ({
 	displayInvoiceDetail,
 	selected,
 	setTrackIndex,
+	setInvoiceDetail
 }) => {
 	const classes = useStyles();
 	const [handleHover, setHandleHover] = useState(true);
@@ -33,6 +29,12 @@ const InvoiceTableItem = ({
 		setHandleHover(false);
 		displayInvoiceDetail(id, type, accountName, status, currency, balance);
 		setTrackIndex(id);
+		console.log(selected);
+
+		if (selected) {
+			setTrackIndex(-1);
+			setInvoiceDetail('')
+		}
 	};
 
 	return (

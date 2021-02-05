@@ -7,9 +7,9 @@ const useStyles = makeStyles(() => ({
 	root: {
 		cursor: 'pointer',
 		position: 'absolute',
-		right: '1.6em',
+		right: '2em',
 		top: '2em',
-	},
+	}
 }));
 
 const SimpleMenu = () => {

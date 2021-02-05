@@ -61,7 +61,7 @@ const Invoice = () => {
 						<InvoiceTable
 							invoices={orderBy(invoices, sortAndDirection.columnToSort, sortAndDirection.sortDirection)}
 							displayInvoiceDetail={displayInvoiceDetail}
-							setInvoiceDetail={invoiceDetail}
+							setInvoiceDetail={setInvoiceDetail}
 							trackIndex={trackIndex}
 							setTrackIndex={setTrackIndex}
 							headCells={headCells}
