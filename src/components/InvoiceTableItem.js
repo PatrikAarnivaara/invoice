@@ -29,7 +29,6 @@ const InvoiceTableItem = ({
 		setHandleHover(false);
 		displayInvoiceDetail(id, type, accountName, status, currency, balance);
 		setTrackIndex(id);
-		console.log(selected);
 
 		if (selected) {
 			setTrackIndex(-1);

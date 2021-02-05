@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
 		cursor: 'pointer',
 		position: 'absolute',
 		right: '2em',
-		top: '2em',
+		top: '3em',
 	}
 }));
 
