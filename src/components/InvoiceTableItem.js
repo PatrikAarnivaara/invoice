@@ -20,7 +20,7 @@ const InvoiceTableItem = ({
 	displayInvoiceDetail,
 	selected,
 	setTrackIndex,
-	setInvoiceDetail
+	setInvoiceDetail,
 }) => {
 	const classes = useStyles();
 	const [handleHover, setHandleHover] = useState(true);
@@ -32,7 +32,9 @@ const InvoiceTableItem = ({
 
 		if (selected) {
 			setTrackIndex(-1);
-			setInvoiceDetail('')
+			setInvoiceDetail('');
+			console.log(handleHover);
+			/* setHandleHover(true); */
 		}
 	};
 
@@ -42,7 +44,6 @@ const InvoiceTableItem = ({
 			className={selected ? classes.selectedRow : ''}
 			onClick={handleOnClickItem}
 			hover={handleHover}
-			onMouseOut={() => setHandleHover(true)}
 		>
 			<TableCell component="th" scope="row">
 				{type}
