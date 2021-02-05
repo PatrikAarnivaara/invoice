@@ -34,7 +34,7 @@ const InvoiceTableItem = ({
 			setTrackIndex(-1);
 			setInvoiceDetail('');
 			console.log(handleHover);
-			/* setHandleHover(true); */
+			setHandleHover(true); 
 		}
 	};
 
