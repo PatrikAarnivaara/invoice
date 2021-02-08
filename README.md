@@ -25,7 +25,7 @@ Application consisting of a table of invoices. Each invoice can be viewed in det
 5. Application opens at localhost:3000
 
 ## Status
-Project is: _completed_
+Project is: _ongoing_
 
 ## Contact
 Created by Patrik Aarnivaara
