@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
-const CloseButton = ({ closeOnClick, resetIndex, setHandleHover }) => {
+const CloseButton = ({ setInvoiceDetail, resetIndex, setHandleHover }) => {
 	const handleClose = () => {
 		setInvoiceDetail('');
 		resetIndex(-1);

@@ -59,7 +59,7 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex, setHand
 						</CardActionArea>
 					</Card>
 					<CloseButton
-						closeOnClick={setInvoiceDetail}
+						setInvoiceDetail={setInvoiceDetail}
 						resetIndex={setTrackIndex}
 						setHandleHover={setHandleHover}
 					></CloseButton>
