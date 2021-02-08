@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import NumberFormat from 'react-number-format';
 import CloseButton from '../UI/CloseButton';
 import { Card, CardActionArea, CardContent, CardMedia, Typography, Grid } from '@material-ui/core';
 
@@ -42,7 +43,14 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex, setHand
 										<Typography variant="overline">Status</Typography>
 										<Typography variant="body2">{status}</Typography>
 										<Typography variant="overline">Balance</Typography>
-										<Typography variant="body2">{balance}</Typography>
+										<Typography variant="body2">
+											<NumberFormat
+												value={balance}
+												displayType={'text'}
+												thousandSeparator={true}
+												prefix={'$'}
+											/>
+										</Typography>
 									</Grid>
 									<Grid item xs={6}>
 										<Typography variant="overline">Account Name</Typography>

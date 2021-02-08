@@ -32,7 +32,7 @@ const InvoiceTableItem = ({
 			setTrackIndex(id);
 			displayInvoiceDetail(id, type, accountName, status, currency, balance);
 			setHandleHover(false);
-			console.log(id, handleHover, 'not selected');
+			console.log(id, handleHover, '!selected');
 		}
 
 		if (selected) {
