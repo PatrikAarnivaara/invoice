@@ -16,6 +16,7 @@ Application consisting of a table of invoices. Each invoice can be viewed in det
 
 ## Features in development
 * Filtering of table data
+* Menu design
 
 ## API
 * mockAPI
