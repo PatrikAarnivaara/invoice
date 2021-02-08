@@ -26,21 +26,17 @@ const InvoiceTableItem = ({
 }) => {
 	const classes = useStyles();
 
-	console.log(handleHover)
-
 	const handleOnClickItem = () => {
 		if (!selected) {
 			setTrackIndex(id);
 			displayInvoiceDetail(id, type, accountName, status, currency, balance);
 			setHandleHover(false);
-			console.log(id, handleHover, selected, '!selected');
 		}
 
 		if (selected) {
 			setTrackIndex(-1);
 			setInvoiceDetail('');
 			setHandleHover(true);
-			console.log(id, handleHover, selected, 'selected');
 		}
 	};
 

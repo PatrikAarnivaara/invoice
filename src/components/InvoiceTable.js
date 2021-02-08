@@ -24,8 +24,6 @@ const InvoiceTable = ({
 	handleHover,
 	setHandleHover,
 }) => {
-	console.log(handleHover);
-
 	return (
 		<div>
 			<TableContainer>

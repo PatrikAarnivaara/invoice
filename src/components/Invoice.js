@@ -55,8 +55,6 @@ const Invoice = () => {
 		});
 	};
 
-	console.log(handleHover)
-
 	return (
 		<div>
 			<Grid container component="main">
