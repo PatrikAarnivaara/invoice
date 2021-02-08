@@ -54,6 +54,9 @@ const Invoice = () => {
 				sortAndDirection.columnToSort === columnId ? invertDirection[sortAndDirection.sortDirection] : 'asc',
 		});
 	};
+
+	console.log(handleHover)
+
 	return (
 		<div>
 			<Grid container component="main">

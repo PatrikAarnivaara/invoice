@@ -7,7 +7,6 @@ const CloseButton = ({ setInvoiceDetail, resetIndex, setHandleHover }) => {
 		setInvoiceDetail('');
 		resetIndex(-1);
 		setHandleHover(true);
-
 	};
 
 	return (
