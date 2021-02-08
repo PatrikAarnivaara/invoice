@@ -15,9 +15,9 @@ Application consisting of a table of invoices. Each invoice can be viewed in det
 * Sort columns
 
 ## Features in development
-* Filtering of table
+* Filtering of table data
 
-## Api
+## API
 * mockAPI
 
 ## Setup
