@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NumberFormat from 'react-number-format';
 import { TableCell, TableRow } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,20 +21,26 @@ const InvoiceTableItem = ({
 	selected,
 	setTrackIndex,
 	setInvoiceDetail,
+	handleHover,
+	setHandleHover,
 }) => {
 	const classes = useStyles();
-	const [handleHover, setHandleHover] = useState(true);
+
+	console.log(handleHover)
 
 	const handleOnClickItem = () => {
-		setHandleHover(false);
-		displayInvoiceDetail(id, type, accountName, status, currency, balance);
-		setTrackIndex(id);
+		if (!selected) {
+			setTrackIndex(id);
+			displayInvoiceDetail(id, type, accountName, status, currency, balance);
+			setHandleHover(false);
+			console.log(id, handleHover, selected, '!selected');
+		}
 
 		if (selected) {
 			setTrackIndex(-1);
 			setInvoiceDetail('');
-			console.log(handleHover);
-			setHandleHover(true); 
+			setHandleHover(true);
+			console.log(id, handleHover, selected, 'selected');
 		}
 	};
 

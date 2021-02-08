@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import NumberFormat from 'react-number-format';
 import CloseButton from '../UI/CloseButton';
 import { Card, CardActionArea, CardContent, CardMedia, Typography, Grid } from '@material-ui/core';
 
@@ -14,7 +15,7 @@ const useStyles = makeStyles(() => ({
 	},
 }));
 
-const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
+const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex, setHandleHover }) => {
 	const classes = useStyles();
 	const { type, accountName, status, currency, balance } = invoiceDetail;
 
@@ -42,7 +43,14 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 										<Typography variant="overline">Status</Typography>
 										<Typography variant="body2">{status}</Typography>
 										<Typography variant="overline">Balance</Typography>
-										<Typography variant="body2">{balance}</Typography>
+										<Typography variant="body2">
+											<NumberFormat
+												value={balance}
+												displayType={'text'}
+												thousandSeparator={true}
+												prefix={'$'}
+											/>
+										</Typography>
 									</Grid>
 									<Grid item xs={6}>
 										<Typography variant="overline">Account Name</Typography>
@@ -58,7 +66,11 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 							</CardContent>
 						</CardActionArea>
 					</Card>
-					<CloseButton closeOnClick={setInvoiceDetail} resetIndex={setTrackIndex}></CloseButton>
+					<CloseButton
+						setInvoiceDetail={setInvoiceDetail}
+						resetIndex={setTrackIndex}
+						setHandleHover={setHandleHover}
+					></CloseButton>
 				</div>
 			)}
 		</div>
