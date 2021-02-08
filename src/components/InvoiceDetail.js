@@ -58,7 +58,7 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 							</CardContent>
 						</CardActionArea>
 					</Card>
-					<CloseButton closeOnClick={setInvoiceDetail} resetIndex={setTrackIndex}></CloseButton>
+					<CloseButton setInvoiceDetail={setInvoiceDetail} resetIndex={setTrackIndex}></CloseButton>
 				</div>
 			)}
 		</div>
