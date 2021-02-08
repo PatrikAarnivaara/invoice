@@ -3,7 +3,7 @@
 Application consisting of a table of invoices. Each invoice can be viewed in detail by clicking a row and individual columns can be sorted.  
 
 ## Screenshots
-![](screenshot.png)
+<img src="https://res.cloudinary.com/whatwherewhen/image/upload/v1612773572/invoice/screenshot.png" width="auto" height="400">
 
 ## Technologies
 * React
