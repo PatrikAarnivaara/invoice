@@ -17,6 +17,7 @@ const headCells = [
 const Invoice = () => {
 	const [invoices, setInvoices] = useState([]);
 	const [invoiceDetail, setInvoiceDetail] = useState('');
+	const [handleHover, setHandleHover] = useState(true);
 	const [trackIndex, setTrackIndex] = useState(-1);
 	const [sortAndDirection, setSortAndDirection] = useState({ columnToSort: '', sortDirection: 'desc' });
 	const invertDirection = { asc: 'desc', desc: 'asc' };
@@ -68,6 +69,8 @@ const Invoice = () => {
 							handleSort={handleSort}
 							columnToSort={sortAndDirection.columnToSort}
 							sortDirection={sortAndDirection.sortDirection}
+							handleHover={handleHover}
+							setHandleHover={setHandleHover}
 						/>
 					)}
 				</Grid>
@@ -77,6 +80,7 @@ const Invoice = () => {
 						invoiceDetail={invoiceDetail}
 						setInvoiceDetail={setInvoiceDetail}
 						setTrackIndex={setTrackIndex}
+						setHandleHover={setHandleHover}
 					/>
 				</Grid>
 			</Grid>

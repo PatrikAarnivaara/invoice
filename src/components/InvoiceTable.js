@@ -21,6 +21,8 @@ const InvoiceTable = ({
 	handleSort,
 	columnToSort,
 	sortDirection,
+	handleHover,
+	setHandleHover,
 }) => {
 	return (
 		<div>
@@ -56,6 +58,8 @@ const InvoiceTable = ({
 								selected={invoice.id === trackIndex}
 								setTrackIndex={setTrackIndex}
 								setInvoiceDetail={setInvoiceDetail}
+								handleHover={handleHover}
+								setHandleHover={setHandleHover}
 							/>
 						))}
 					</TableBody>

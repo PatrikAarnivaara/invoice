@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
 	},
 }));
 
-const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
+const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex, setHandleHover }) => {
 	const classes = useStyles();
 	const { type, accountName, status, currency, balance } = invoiceDetail;
 
@@ -58,7 +58,11 @@ const InvoiceDetail = ({ invoiceDetail, setInvoiceDetail, setTrackIndex }) => {
 							</CardContent>
 						</CardActionArea>
 					</Card>
-					<CloseButton setInvoiceDetail={setInvoiceDetail} resetIndex={setTrackIndex}></CloseButton>
+					<CloseButton
+						closeOnClick={setInvoiceDetail}
+						resetIndex={setTrackIndex}
+						setHandleHover={setHandleHover}
+					></CloseButton>
 				</div>
 			)}
 		</div>
