@@ -1,12 +1,9 @@
 import { createMuiTheme } from '@material-ui/core';
-import { red, grey } from '@material-ui/core/colors';
+import { grey } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
 	palette: {
 		primary: {
-			main: red[700],
-		},
-		secondary: {
 			main: grey[200],
 		},
 	},
@@ -61,9 +58,8 @@ theme.overrides = {
 	MuiButton: {
 		root: {
 			backgroundColor: '#ffffff',
-			/* padding: 20, */
-		}
-	}
+		},
+	},
 };
 
 export default theme;

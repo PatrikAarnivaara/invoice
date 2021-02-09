@@ -11,7 +11,7 @@ const CloseButton = ({ setInvoiceDetail, resetIndex, setHandleHover }) => {
 
 	return (
 		<IconButton aria-label="close card" onClick={handleClose}>
-			<CloseIcon color="secondary" fontSize="large" />
+			<CloseIcon color="primary" fontSize="large" />
 		</IconButton>
 	);
 };
